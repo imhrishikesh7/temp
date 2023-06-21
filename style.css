@@ -1,0 +1,60 @@
+body { 
+    height: 100vh;
+    font-family: sans-serif;
+    background-image:linear-gradient(120deg, purple, black);
+    background-repeat: no-repeat;
+}
+
+.scene {
+  display: inline-block;
+  width: 260px;
+  height: 340px;
+/*   border: 1px solid #CCC; */
+  margin: 40px 40%;
+  perspective: 600px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  line-height: 4;
+  font-weight: bold;
+  font-size: medium;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+  background: rgb(174, 11, 147);
+}
+.card__face--front p {
+    font-size: 20px;
+    margin: 50% 0;
+}
+
+.card__face--back {
+  background: slateblue;
+  transform: rotateY(180deg);
+
+}
+.card__face--back img {
+    width: 100%;
+    height: 100%;
+}
+
